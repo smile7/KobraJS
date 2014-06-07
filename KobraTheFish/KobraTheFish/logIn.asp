@@ -2,10 +2,9 @@
 <!--#include virtual="mainIncludes.asp"-->
 <body>
     <form>
-        User Name: <input id="louserName" type="text" />
-        <input type="button" id="logIn" value="Log In" />
-        <input type="button" id="register" value ="Register"/>
-
+        User Name: <input id="userName" type="text" />
+        <input type="button" id="logIn" onclick="logUserIn();" value="Log In" />
+        <input type="button" id="register" onclick="registerUser();" value ="Register"/>
     </form>
 </body>
 </html>
