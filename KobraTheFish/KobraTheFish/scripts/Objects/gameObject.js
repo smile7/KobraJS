@@ -31,7 +31,7 @@ Fish = GameObject.extend({
 
     },
 
-    drawFish: function(parameters) {
+    drawFish: function(parameters) { //asd
         
     },
 
