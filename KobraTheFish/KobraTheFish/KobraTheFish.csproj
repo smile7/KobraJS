@@ -85,6 +85,12 @@
     <Content Include="scripts\images\7.png" />
     <Content Include="scripts\images\8.png" />
     <Content Include="scripts\images\9.png" />
+    <Content Include="scripts\images\A.png" />
+    <Content Include="scripts\images\B.png" />
+    <Content Include="scripts\images\C.png" />
+    <Content Include="scripts\images\D.png" />
+    <Content Include="scripts\images\E.png" />
+    <Content Include="scripts\images\F.png" />
     <Content Include="scripts\images\Sea-Water-final.png" />
     <Content Include="scripts\images\Sea-Water1024.svg" />
     <Content Include="scripts\jq-1.11.1.js" />
