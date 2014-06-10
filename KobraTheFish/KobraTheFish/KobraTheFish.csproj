@@ -65,13 +65,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Default.asp" />
     <Content Include="game.asp" />
+    <Content Include="register.asp" />
     <Content Include="scripts\jq-1.11.1.js" />
     <Content Include="logIn.asp" />
     <Content Include="mainIncludes.asp" />
     <Content Include="scripts\game.js" />
     <Content Include="scripts\inheritancejs.js" />
     <Content Include="scripts\Objects\gameObject.js" />
+    <Content Include="scripts\users.js" />
     <Content Include="scripts\userScore.js" />
     <Content Include="Web.config" />
   </ItemGroup>
