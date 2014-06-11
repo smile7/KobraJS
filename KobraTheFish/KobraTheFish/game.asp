@@ -1,6 +1,7 @@
 ﻿<!--#include virtual="mainIncludes.asp"-->
 
 <body>
+    <input type="button" onclick="Game()" value="Play" id="playBtn" style="width:80px"/>    
     <canvas width="1024" height="768" id="canvas" style="position: absolute">Your Browser Does Not Support Canvas :(</canvas>
     <svg width="1024" height="768" style="position: absolute">
         <rect x="0" y="0" width="1024" height="300" style="fill: #05358c; stroke: none;"></rect>
