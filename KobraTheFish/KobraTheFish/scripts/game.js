@@ -9,15 +9,16 @@ function Game() {
         mainLoop,
         enemyFishSpeed = 1;
     var enemies = generateEnemyObjs();
+    
     mainLoop = function () {
 
         ctx.save();
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+       
         updateEnemiesPosition(enemies);
         //TODO:Implement drawing the enemies
         //drawEnemies(enemies);
-
+        
         ctx.restore();
         animation = requestAnimationFrame(mainLoop);
 
@@ -60,6 +61,16 @@ function Game() {
         }
     }
 
+    //Will be used lately
+
+    //function generateBonus() {
+    //    var yPos = 0;
+    //    var xPos = randomGenerator(10, window.innerWidth - 10);
+    //    var bonus = new Bonus();
+    //    bonus.init(xPos, yPos, 30, 30);
+
+    //    return bonus;
+    //}
     function randomGenerator(min, max) {
 
         var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
