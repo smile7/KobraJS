@@ -43,3 +43,42 @@ function logUserIn() {
         alert("no such user please register");
     }
 }
+
+function saveScore(){
+    var user= document.getElementById("uName").value;
+    var score = parseInt(document.getElementById("score").value);
+    var isHighScore=false;
+    for (i = 0; i < users.length; i++) {
+        if (users[i].uName == user) {
+            
+            if (users[i].score<=score){
+                isHighScore=true;
+                var xmlhttp;
+                 if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else {// code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+
+                xmlhttp.onreadystatechange = function () {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        if (xmlhttp.responseText == "sucsess") {
+                            alert("your highscore has been saved");
+                            window.location.href = "game.asp?user=" + uName;
+                        }
+                        else  {
+                            alert("an error occured on the server please try again later.");
+                        }
+                    }
+                }
+                xmlhttp.open("GET", "saveScore.asp?uName=" + user + "&score="+score, true);
+                xmlhttp.send();
+            }
+            i=users.length;
+        }
+    }
+    if (isHighScore==false){
+        alert("your current score is higher");
+    }
+}

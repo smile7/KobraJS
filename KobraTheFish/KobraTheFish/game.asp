@@ -81,5 +81,7 @@
                 repeatCount="indefinite" />
         </image>
     </svg>
+    <input type="hidden" id="uName" value="<%=request("user") %>" />
+    <input type="hidden" id="score" />
 </body>
 </html>
