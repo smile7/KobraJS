@@ -1,11 +1,14 @@
-﻿function Game() {
+﻿/// <reference path="inheritancejs.js" />
+/// <reference path="Objects/gameObject.js" />
+
+function Game() {
     var self = this,
         animation,
         canvas = $("#canvas")[0],
         ctx = canvas.getContext('2d'),
         mainLoop,
         enemyFishSpeed = 1;
-
+    
     mainLoop = function () {
 
         ctx.save();
@@ -14,7 +17,17 @@
         ctx.restore();
         animation = requestAnimationFrame(mainLoop);
     };
-    
+    mainLoop();
+
+    function generateEnemyObjs() {
+        
+    }
+    function randomGenerator(min, max) {
+
+        var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+        
+        return randomNum;
+    };
     function checkRequestAnimationFrame() {
         if (!window.requestAnimationFrame) {
 

@@ -3,7 +3,7 @@
 function bacground() {
 
     var rsr = Raphael('svg-container', 1024, 768);
-
+    
     var images = [
         'url(../scripts/images/15.png)',
         'url(../scripts/images/14.png)',

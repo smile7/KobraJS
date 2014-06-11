@@ -1,4 +1,5 @@
-﻿GameObject = Class.extend({
+﻿
+GameObject = Class.extend({
     init: function (x, y, width, height, name) {
         this.name = name;
         this.width = width;
@@ -34,8 +35,7 @@ Fish = GameObject.extend({
     drawFish: function(parameters) { //asd
         
     },
-
-
+    
 });
 // TO DO:
 MainFish = Fish.extend({
