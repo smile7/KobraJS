@@ -10,5 +10,5 @@
         <script type="text/javascript" src="/scripts/inheritancejs.js?<%=Rnd %>"></script>
         <script type="text/javascript" src="scripts/Objects/gameObject.js?=<%=RnD%>"></script>
         <script type="text/javascript" src="/scripts/users.js?<%=Rnd %>"></script>
-        <script type="text/javascript" src="/scripts/game.js?<%=Rnd %>" ></script>
+        <script type="text/javascript" src="/scripts/raphael-min.js?<%=Rnd %>"></script>
     </head>

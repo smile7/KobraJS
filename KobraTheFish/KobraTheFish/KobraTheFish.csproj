@@ -65,6 +65,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Default.asp" />
+    <Content Include="game.asp" />
+    <Content Include="register.asp" />
     <Content Include="backgroundTest.html" />
     <Content Include="game.asp" />
     <Content Include="scripts\images\1.png" />
@@ -82,6 +85,12 @@
     <Content Include="scripts\images\7.png" />
     <Content Include="scripts\images\8.png" />
     <Content Include="scripts\images\9.png" />
+    <Content Include="scripts\images\A.png" />
+    <Content Include="scripts\images\B.png" />
+    <Content Include="scripts\images\C.png" />
+    <Content Include="scripts\images\D.png" />
+    <Content Include="scripts\images\E.png" />
+    <Content Include="scripts\images\F.png" />
     <Content Include="scripts\images\Sea-Water-final.png" />
     <Content Include="scripts\images\Sea-Water1024.svg" />
     <Content Include="scripts\jq-1.11.1.js" />
@@ -91,6 +100,7 @@
     <Content Include="scripts\inheritancejs.js" />
     <Content Include="scripts\Objects\background.js" />
     <Content Include="scripts\Objects\gameObject.js" />
+    <Content Include="scripts\users.js" />
     <Content Include="scripts\raphael-min.js" />
     <Content Include="scripts\raphael.js" />
     <Content Include="scripts\userScore.js" />

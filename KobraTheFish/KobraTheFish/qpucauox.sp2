@@ -1,5 +1,4 @@
 ﻿<!--#include virtual="mainIncludes.asp"-->
-
 <body>
     <canvas width="1024" height="768" id="canvas" style="position: absolute">Your Browser Does Not Support Canvas :(</canvas>
     <svg width="1024" height="768" style="position: absolute">
@@ -82,7 +81,5 @@
                 repeatCount="indefinite" />
         </image>
     </svg>
-    <input type="hidden" id="uName" value="<%=request("user") %>" />
-    <input type="hidden" id="score" />
 </body>
 </html>
