@@ -31,37 +31,37 @@
         <image x="0" y="0" width="100" height="60" xlink:href="scripts/images/A.png">
             <animateTransform attributeName="transform"
                 begin="0s"
-                dur="20s"
+                dur="40s"
                 type="translate"
-                from="-100 50"
-                to="1100 500"
+                from="0 50"
+                to="100 500"
                 repeatCount="indefinite" />
         </image>
         <image x="0" y="0" width="60" height="100" xlink:href="scripts/images/B.png">
             <animateTransform attributeName="transform"
                 begin="0s"
-                dur="17s"
+                dur="57s"
                 type="translate"
-                from="1100 0"
-                to="-100"
+                from="900 0"
+                to="40 600 "
                 repeatCount="indefinite" />
         </image>
         <image x="0" y="0" width="70" height="60" xlink:href="scripts/images/C.png">
             <animateTransform attributeName="transform"
                 begin="0s"
-                dur="30s"
-                type="rotate"
-                from="180 200 300"
-                to="0 150 4500"
+                dur="46s"
+                type="translate"
+                from="500 30"
+                to="150 750"
                 repeatCount="indefinite" />
         </image>
         <image x="0" y="0" width="60" height="90" xlink:href="scripts/images/D.png">
             <animateTransform attributeName="transform"
                 begin="0s"
-                dur="45s"
+                dur="63s"
                 type="translate"
-                from="-100 300"
-                to="1100 100"
+                from="-10 300"
+                to="900 100"
                 repeatCount="indefinite" />
         </image>
         <image x="0" y="0" width="90" height="60" xlink:href="scripts/images/E.png">
@@ -69,17 +69,17 @@
                 begin="0s"
                 dur="95s"
                 type="translate"
-                from="1100 400"
-                to="-100 200"
+                from="1000 400"
+                to="50 200"
                 repeatCount="indefinite" />
         </image>
         <image x="0" y="0" width="60" height="60" xlink:href="scripts/images/F.png">
             <animateTransform attributeName="transform"
                 begin="0s"
                 dur="47s"
-                type="rotate"
-                from="10 300 400"
-                to="160 300 400"
+                type="translate"
+                from="750 600"
+                to="300 0"
                 repeatCount="indefinite" />
         </image>
     </svg>
