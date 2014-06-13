@@ -70,6 +70,7 @@
     <Content Include="register.asp" />
     <Content Include="backgroundTest.html" />
     <Content Include="game.asp" />
+    <Content Include="scripts\hero.js" />
     <Content Include="scripts\images\1.png" />
     <Content Include="scripts\images\10.png" />
     <Content Include="scripts\images\11.png" />
@@ -98,8 +99,14 @@
     <Content Include="mainIncludes.asp" />
     <Content Include="scripts\game.js" />
     <Content Include="scripts\inheritancejs.js" />
+    <Content Include="scripts\kinetic.min.js" />
     <Content Include="scripts\Objects\background.js" />
     <Content Include="scripts\Objects\gameObject.js" />
+    <Content Include="scripts\oval.js" />
+    <Content Include="scripts\ovalToRight.js" />
+    <Content Include="scripts\skeleton.js" />
+    <Content Include="scripts\triangle.js" />
+    <Content Include="scripts\triangleToRight.js" />
     <Content Include="scripts\users.js" />
     <Content Include="scripts\raphael-min.js" />
     <Content Include="scripts\raphael.js" />

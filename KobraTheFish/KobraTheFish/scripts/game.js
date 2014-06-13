@@ -1,5 +1,10 @@
 ﻿/// <reference path="inheritancejs.js" />
 /// <reference path="Objects/gameObject.js" />
+/// <reference path="hero.js" />
+/// <reference path="oval.js" />
+/// <reference path="triangle.js" />
+/// <reference path="skeleton.js" />
+
 
 function Game() {
     var self = this,
@@ -8,56 +13,96 @@ function Game() {
         ctx = canvas.getContext('2d'),
         mainLoop,
         enemyFishSpeed = 1;
-    var enemies = generateEnemyObjs();
-    
+
+    //TODO:implement for random number of objects
+    var enemies = generateEnemyObjs(5);
+    appendDivstoDom(enemies);
+    setCanvas(enemies);
+
     mainLoop = function () {
 
         ctx.save();
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-       
+
+        drawEnemies(enemies);
+
         updateEnemiesPosition(enemies);
-        //TODO:Implement drawing the enemies
-        //drawEnemies(enemies);
-        
+
         ctx.restore();
         animation = requestAnimationFrame(mainLoop);
 
     };
     mainLoop();
 
-    function generateEnemyObjs() {
+    function generateEnemyObjs(enemiesCount) {
+
         var enemiesArr = [];
         var xPos = window.innerWidth;
-        
-        //creates 10 enemy fish
-        //TODO:create different number of enemies
-        for (var i = 0; i < 10; i++) {
+
+        for (var i = 0; i < enemiesCount; i++) {
             var currentEnemy = new EnemyFish();
 
             var currentYPos = randomGenerator(10, window.innerHeight - 10);
             var currWidth = randomGenerator(10, 50);
             var currHeight = randomGenerator(10, 50);
-            
+
             currentEnemy.init(xPos, currentYPos, currWidth, currHeight);
             enemiesArr.push(currentEnemy);
         }
 
+
         return enemiesArr;
     }
 
-    function updateEnemiesPosition(enemies) {
+    function appendDivstoDom(enemiesArr) {
 
-        for (var i = 0; i < enemies.length; i++) {
-            enemies[i].x -= enemyFishSpeed;
+        var fragment = document.createDocumentFragment();
+
+        for (var i = 0; i < enemiesArr.length; i++) {
+            var currDiv = document.createElement('div');
+            currDiv.id = i;
+            fragment.appendChild(currDiv);
         }
+        document.body.appendChild(fragment);
     }
 
-    function drawEnemies(enemies) {
+    function updateEnemiesPosition(enemiesArr) {
 
-        for (var i = 0; i < enemies.length; i++) {
-            enemies[i].canvas.clearRect(0, 0, enemies[i].canvas.width, enemies[i].canvas.height);
+        for (var i = 0; i < enemiesArr.length; i++) {
+            enemiesArr[i].x -= enemyFishSpeed;
+        }
+    }
+    //TODO: Implement random type objects
+            //Calculate better positioning of elements and adequte object size
+    function setCanvas(enemiesArr) {
 
-            enemies[i].drawFish();
+        //i as a string is used as an id for the canvas
+        for (var i = 0; i < enemiesArr.length; i++) {
+            var randomObjType = randomGenerator(1, 3);
+
+            switch (randomObjType) {
+                case 1:
+                    enemiesArr[i].canvas = drawSkeleton(enemiesArr[i].width, enemiesArr[i].height, i.toString());
+                    break;
+                case 2:
+                    enemiesArr[i].canvas = drawTriangle(enemiesArr[i].width,
+                        enemiesArr[i].height, enemiesArr[i].x, enemiesArr[i].y, i.toString());
+                    break;
+                case 3:
+                    enemiesArr[i].canvas = drawOval(enemiesArr[i].width, enemiesArr[i].height, i.toString());
+                    break;
+                default:
+                    break;
+            }
+
+        }
+    }
+    function drawEnemies(enemiesArr) {
+        for (var i = 0; i < enemiesArr.length; i++) {
+            var currDiv = document.getElementById(i);
+
+            currDiv.style.top = enemiesArr[i].y + 'px';
+            currDiv.style.left = enemiesArr[i].x + 'px';
         }
     }
 
@@ -74,7 +119,7 @@ function Game() {
     function randomGenerator(min, max) {
 
         var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-        
+
         return randomNum;
     }
 

@@ -1,5 +1,12 @@
 ﻿<!--#include virtual="mainIncludes.asp"-->
-
+<style>
+ div{
+    z-index:10;
+    opacity:.9;
+    position:absolute;
+    display:inline-block;
+}
+</style>
 <body>
     <div class="mainContainer">
         <ul id='menu'>
