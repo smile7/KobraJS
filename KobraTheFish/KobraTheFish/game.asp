@@ -1,4 +1,4 @@
-﻿<!--#include virtual="mainIncludes.asp"-->
+﻿<!--#include file="mainIncludes.asp"-->
 <style>
  div{
     z-index:10;
@@ -13,7 +13,16 @@
             <li id="startGame">Start Game</li>
             <li id="scoreSubmit">Submit score</li>
             <li id="logout">Logout</li>
+            <li id="help">Instructions</li>
         </ul>
+        <div id="instructionsContainer">
+            <ul>
+                <li>Move your fish with the mouse.</li>
+                <li>Eat smaller fish, avoid bigger fish.</li>
+                <li>The more fish you eat the higher your score.</li>
+            </ul>
+            <div id="closeHelp" title="close help">X</div>
+        </div>
         <!--input type="button" onclick="Game()" value="Play" id="playBtn" style="width:80px"/-->    
         <canvas width="1024" height="768" id="canvas" style="position: absolute">Your Browser Does Not Support Canvas :(</canvas>
         <svg width="1024" height="768" style="position: absolute">
@@ -119,5 +128,14 @@
         }
     });
     
+    $("#help").click(function(){
+        $("#instructionsContainer").fadeIn("slow");
+        $("#menu").fadeOut("slow");
+    });
+    
+    $("#instructionsContainer").click(function(){
+        $("#instructionsContainer").fadeOut("slow");
+        $("#menu").fadeIn("slow");
+    });
 </script>
 </html>
