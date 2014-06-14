@@ -21,6 +21,7 @@ function saveToLocalStorage() {
 
 function saveToCookies() {
     var cookiesString;
+    cookiesString=
     cookiesString = "" + "username=test";
     //and so on need to see whats what
     document.cookie = cookiesString;

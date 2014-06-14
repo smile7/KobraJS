@@ -121,9 +121,11 @@
     $("#logout").click(function(){
         if (confirm("Would you like to save your score?") == true) {
             saveScore();
+            localStorage.removeItem("userName");
             window.location.href="logIN.asp";
         } 
         else {
+            localStorage.removeItem("userName");
             window.location.href="logIN.asp";
         }
     });
