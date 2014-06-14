@@ -86,7 +86,7 @@ function drawOval (CONST_WIDTH, CONST_HEIGHT,id) {
     layer.add(body);
     layer.add(pupil);
     layer.add(tail);
-    layer.add(rect);
+    //layer.add(rect);
     return stage.add(layer);
 }
 

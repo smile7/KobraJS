@@ -43,7 +43,7 @@ function drawTriangle (CONST_WIDTH, CONST_HEIGHT, x, y) {
     layer.add(curve);
     layer.add(eye);
     layer.add(body);
-    layer.add(rect);
+    //layer.add(rect);
     return stage.add(layer);
 }
 

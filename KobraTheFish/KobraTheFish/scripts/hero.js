@@ -189,7 +189,7 @@ function drawHero (CONST_WIDTH, CONST_HEIGHT, x, y, id) {
     layer.add(beard3);
     layer.add(beard2);
     layer.add(beard1);
-    layer.add(rect);
+    //layer.add(rect);
     return stage.add(layer);
 }
 
