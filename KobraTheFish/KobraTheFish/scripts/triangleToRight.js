@@ -50,4 +50,4 @@ function drawTriangle (CONST_WIDTH, CONST_HEIGHT, x, y) {
 // HEIGHT MUST BE EXACTLY AS LONG AS THE WIDTH
 var width = 100,
     height = 100;
-drawTriangle(width, height, 100, 100);
+//drawTriangle(width, height, 100, 100);

@@ -41,8 +41,8 @@ function logUserIn(userName) {
                 else {
                     setCookie("userName", userName, 365);
                 }
-            }
-       logged = true;
+                logged = true;
+            }       
     }
     if (logged == false) {
         alert("no such user please register");

@@ -156,5 +156,5 @@ function drawSkeleton (CONST_WIDTH, CONST_HEIGHT, id) {
 // HEIGHT MUST BE EXACTLY 2 TIMES SHORTER THAT THE WIDTH!
 var width = 200,
     height = 100;
-drawSkeleton(width, height);
+//drawSkeleton(width, height);
 

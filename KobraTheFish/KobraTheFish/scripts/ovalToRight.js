@@ -93,4 +93,4 @@ function drawOval (CONST_WIDTH, CONST_HEIGHT) {
 // HEIGHT MUST BE EXACTLY AS LONG AS THE WIDTH
 var width = 100,
     height = 100;
-drawOval(width, height);
+//drawOval(width, height);

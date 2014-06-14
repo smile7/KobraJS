@@ -198,4 +198,4 @@ function drawHero (CONST_WIDTH, CONST_HEIGHT, x, y, id) {
 // HEIGHT MUST BE EXACTLY AS LONG AS THE WIDTH
 var width = 130,
     height = 130;
-drawHero(width, height, 100, 100);
+//drawHero(width, height, 100, 100);
