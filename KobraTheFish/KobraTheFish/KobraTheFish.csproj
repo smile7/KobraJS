@@ -102,6 +102,7 @@
     <Content Include="scripts\kinetic.min.js" />
     <Content Include="scripts\Objects\background.js" />
     <Content Include="scripts\Objects\gameObject.js" />
+    <Content Include="scripts\skeletonToRight.js" />
     <Content Include="scripts\oval.js" />
     <Content Include="scripts\ovalToRight.js" />
     <Content Include="scripts\skeleton.js" />

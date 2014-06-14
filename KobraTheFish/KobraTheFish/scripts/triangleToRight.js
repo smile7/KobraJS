@@ -1,9 +1,9 @@
-function drawTriangle (CONST_WIDTH, CONST_HEIGHT, x, y) {
+function drawTriangleToRight(CONST_WIDTH, CONST_HEIGHT, x, y, id) {
     var stage = new Kinetic.Stage({
-            container: 'container',
-            width: CONST_WIDTH,
-            height: CONST_HEIGHT
-        }),
+        container: id,
+        width: CONST_WIDTH,
+        height: CONST_HEIGHT
+    }),
         layer = new Kinetic.Layer();
 
     // border

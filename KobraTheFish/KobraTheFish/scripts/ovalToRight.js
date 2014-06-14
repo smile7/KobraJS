@@ -1,6 +1,6 @@
-function drawOval (CONST_WIDTH, CONST_HEIGHT) {
+function drawOvalToRight (CONST_WIDTH, CONST_HEIGHT,id) {
     var stage = new Kinetic.Stage({
-            container: 'container',
+            container: id,
             width: CONST_WIDTH,
             height: CONST_HEIGHT
         }),

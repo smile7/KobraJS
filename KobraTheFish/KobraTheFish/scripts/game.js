@@ -4,7 +4,9 @@
 /// <reference path="oval.js" />
 /// <reference path="triangle.js" />
 /// <reference path="skeleton.js" />
-
+/// <reference path="skeletonToRight.js"/>
+/// <reference path="triangleToRight.js"/>
+/// <reference path="ovalToRight.js"/>
 
 function Game() {
     var self = this,
@@ -15,7 +17,7 @@ function Game() {
         enemyFishSpeed = 1;
 
     //TODO:implement for random number of objects
-    var enemies = generateEnemyObjs(5);
+    var enemies = generateEnemyObjs(100);
     appendDivstoDom(enemies);
     setCanvas(enemies);
 

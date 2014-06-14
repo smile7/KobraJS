@@ -17,3 +17,4 @@
         <script type="text/javascript" src="/scripts/triangle.js?<%=Rnd %>"></script>
         <link rel="stylesheet" href="/style/style.css?ver=<%=RnD %>"  />
 
+        <script type="text/javascript" src="scripts/skeletonToRight.js"></script>
