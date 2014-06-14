@@ -2,10 +2,10 @@ function drawSkeleton (CONST_WIDTH, CONST_HEIGHT) {
     //CONST_WIDTH = 200;
     //CONST_HEIGHT = 100;
     var stage = new Kinetic.Stage({
-        container: 'container',
-        width: CONST_WIDTH,
-        height: CONST_HEIGHT
-    }),
+            container: 'container',
+            width: CONST_WIDTH,
+            height: CONST_HEIGHT,
+        }),
         layer = new Kinetic.Layer();
 
     // border
@@ -18,65 +18,65 @@ function drawSkeleton (CONST_WIDTH, CONST_HEIGHT) {
     });
 
     var head = new Kinetic.Line({
-        points: [2, CONST_HEIGHT * 0.7, CONST_WIDTH * 0.2, 2, CONST_WIDTH * 0.2, CONST_HEIGHT, 2, CONST_HEIGHT * 0.7],
+        points: [CONST_WIDTH, CONST_HEIGHT * 0.7, CONST_WIDTH * 0.8, CONST_HEIGHT - 2, CONST_WIDTH * 0.8, 2, CONST_WIDTH, CONST_HEIGHT * 0.7],
         stroke: 'green',
         strokeWidth: 3,
         tension: 0.1
     });
 
     var mouth = new Kinetic.Line({
-        points: [2, CONST_HEIGHT * 0.7, CONST_WIDTH * 0.11, CONST_HEIGHT * 0.7, CONST_WIDTH * 0.13, CONST_HEIGHT * 0.68],
+        points: [CONST_WIDTH - 2, CONST_HEIGHT * 0.7, CONST_WIDTH * 0.89, CONST_HEIGHT * 0.7, CONST_WIDTH * 0.87, CONST_HEIGHT * 0.68],
         stroke: 'green',
         strokeWidth: 3,
         tension: 3
     });
 
     var eye = new Kinetic.Circle({
-        x: CONST_WIDTH * 0.08,
+        x: CONST_WIDTH * 0.92,
         y: CONST_HEIGHT * 0.5,
-        radius: 13,
+        radius: CONST_HEIGHT * 0.13,
         stroke: 'green',
         fill: 'yellow'
     });
 
     var pupil = new Kinetic.Circle({
-        x: CONST_WIDTH * 0.05,
+        x: CONST_WIDTH * 0.95,
         y: CONST_HEIGHT * 0.51,
-        radius: 5,
+        radius: CONST_HEIGHT * 0.05,
         stroke: 'green',
         fill: 'black'
     });
 
     var bodyBone1 = new Kinetic.Line({
-        points: [CONST_WIDTH * 0.35, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.27, CONST_HEIGHT * 0.15, CONST_WIDTH * 0.35, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.27, CONST_HEIGHT * 0.85],
+        points: [CONST_WIDTH * 0.65, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.73, CONST_HEIGHT * 0.85, CONST_WIDTH * 0.65, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.73, CONST_HEIGHT * 0.15],
         stroke: 'green',
         strokeWidth: 2,
         fill: 'yellowgreen'
     });
 
     var bodyBone2 = new Kinetic.Line({
-        points: [CONST_WIDTH * 0.50, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.42, CONST_HEIGHT * 0.15, CONST_WIDTH * 0.5, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.42, CONST_HEIGHT * 0.85],
+        points: [CONST_WIDTH * 0.50, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.58, CONST_HEIGHT * 0.85, CONST_WIDTH * 0.5, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.58, CONST_HEIGHT * 0.15],
         stroke: 'green',
         strokeWidth: 2,
         fill: 'yellowgreen'
     });
 
     var bodyBone3 = new Kinetic.Line({
-        points: [CONST_WIDTH * 0.65, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.57, CONST_HEIGHT * 0.15, CONST_WIDTH * 0.65, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.57, CONST_HEIGHT * 0.85],
+        points: [CONST_WIDTH * 0.35, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.43, CONST_HEIGHT * 0.85, CONST_WIDTH * 0.35, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.43, CONST_HEIGHT * 0.15],
         stroke: 'green',
         strokeWidth: 2,
         fill: 'yellowgreen'
     });
 
     var bodyBone4 = new Kinetic.Line({
-        points: [CONST_WIDTH * 0.8, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.72, CONST_HEIGHT * 0.15, CONST_WIDTH * 0.8, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.72, CONST_HEIGHT * 0.85],
+        points: [CONST_WIDTH * 0.2, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.28, CONST_HEIGHT * 0.85, CONST_WIDTH * 0.2, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.28, CONST_HEIGHT * 0.15],
         stroke: 'green',
         strokeWidth: 2,
         fill: 'yellowgreen'
     });
 
     var body1 = new Kinetic.Line({
-        points: [CONST_WIDTH * 0.21, CONST_HEIGHT * 0.25, CONST_WIDTH * 0.35, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.21, CONST_HEIGHT * 0.75],
+        points: [CONST_WIDTH * 0.79, CONST_HEIGHT * 0.75, CONST_WIDTH * 0.65, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.79, CONST_HEIGHT * 0.25],
         stroke: 'green',
         strokeWidth: 2,
         fill: 'yellowgreen',
@@ -84,7 +84,7 @@ function drawSkeleton (CONST_WIDTH, CONST_HEIGHT) {
     });
 
     var body2 = new Kinetic.Line({
-        points: [CONST_WIDTH * 0.35, CONST_HEIGHT * 0.25, CONST_WIDTH * 0.5, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.35, CONST_HEIGHT * 0.75],
+        points: [CONST_WIDTH * 0.65, CONST_HEIGHT * 0.75, CONST_WIDTH * 0.5, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.65, CONST_HEIGHT * 0.25],
         stroke: 'green',
         strokeWidth: 2,
         fill: 'yellowgreen',
@@ -92,7 +92,7 @@ function drawSkeleton (CONST_WIDTH, CONST_HEIGHT) {
     });
 
     var body3 = new Kinetic.Line({
-        points: [CONST_WIDTH * 0.5, CONST_HEIGHT * 0.25, CONST_WIDTH * 0.65, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.5, CONST_HEIGHT * 0.75],
+        points: [CONST_WIDTH * 0.5, CONST_HEIGHT * 0.75, CONST_WIDTH * 0.35, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.5, CONST_HEIGHT * 0.25],
         stroke: 'green',
         strokeWidth: 2,
         fill: 'yellowgreen',
@@ -100,7 +100,7 @@ function drawSkeleton (CONST_WIDTH, CONST_HEIGHT) {
     });
 
     var body4 = new Kinetic.Line({
-        points: [CONST_WIDTH * 0.65, CONST_HEIGHT * 0.25, CONST_WIDTH * 0.8, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.65, CONST_HEIGHT * 0.75],
+        points: [CONST_WIDTH * 0.35, CONST_HEIGHT * 0.75, CONST_WIDTH * 0.2, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.35, CONST_HEIGHT * 0.25],
         stroke: 'green',
         strokeWidth: 2,
         fill: 'yellowgreen',
@@ -108,7 +108,7 @@ function drawSkeleton (CONST_WIDTH, CONST_HEIGHT) {
     });
 
     var tail  = new Kinetic.Line({
-        points: [CONST_WIDTH * 0.8, CONST_HEIGHT * 0.5, CONST_WIDTH - 2, CONST_HEIGHT * 0.9, CONST_WIDTH - 2, CONST_HEIGHT * 0.1],
+        points: [CONST_WIDTH * 0.2, CONST_HEIGHT * 0.5, 2, CONST_HEIGHT * 0.1, 2, CONST_HEIGHT * 0.9],
         stroke: 'green',
         strokeWidth: 2,
         fill: 'yellowgreen',
@@ -116,19 +116,19 @@ function drawSkeleton (CONST_WIDTH, CONST_HEIGHT) {
     });
 
     var tailBone1  = new Kinetic.Line({
-        points: [CONST_WIDTH * 0.8, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.96, CONST_HEIGHT * 0.64],
+        points: [CONST_WIDTH * 0.2, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.04, CONST_HEIGHT * 0.36],
         stroke: 'green',
         strokeWidth: 2
     });
 
     var tailBone2  = new Kinetic.Line({
-        points: [CONST_WIDTH * 0.8, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.96, CONST_HEIGHT * 0.50],
+        points: [CONST_WIDTH * 0.2, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.04, CONST_HEIGHT * 0.50],
         stroke: 'green',
         strokeWidth: 2
     });
 
     var tailBone3  = new Kinetic.Line({
-        points: [CONST_WIDTH * 0.8, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.96, CONST_HEIGHT * 0.36],
+        points: [CONST_WIDTH * 0.2, CONST_HEIGHT * 0.5, CONST_WIDTH * 0.04, CONST_HEIGHT * 0.64],
         stroke: 'green',
         strokeWidth: 2
     });
@@ -149,7 +149,8 @@ function drawSkeleton (CONST_WIDTH, CONST_HEIGHT) {
     layer.add(mouth);
     layer.add(eye);
     layer.add(pupil);
-    layer.add(rect);
+    // border:
+    //layer.add(rect);
     return stage.add(layer);
 }
 

@@ -1,7 +1,7 @@
 function drawHero (CONST_WIDTH, CONST_HEIGHT, x, y, id) {
     var container = document.getElementById(id);
     var stage = new Kinetic.Stage({
-            container: id,
+            container: container,
             width: CONST_WIDTH,
             height: CONST_HEIGHT
         }),
