@@ -1,6 +1,16 @@
-.mainContainer{width:1024px; margin:0 auto;}
+.mainContainer{
+    width:1024px;
+    margin:0 auto;
+    background: rgba(67,129,163,1);
+    background: -moz-linear-gradient(top, rgba(67,129,163,1) 0%, rgba(212,228,239,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(67,129,163,1)), color-stop(100%, rgba(212,228,239,1)));
+    background: -webkit-linear-gradient(top, rgba(67,129,163,1) 0%, rgba(212,228,239,1) 100%);
+    background: -o-linear-gradient(top, rgba(67,129,163,1) 0%, rgba(212,228,239,1) 100%);
+    background: -ms-linear-gradient(top, rgba(67,129,163,1) 0%, rgba(212,228,239,1) 100%);
+    background: linear-gradient(to bottom, rgba(67,129,163,1) 0%, rgba(212,228,239,1) 100%);
+}
 
-#menu {font-size:36px; position:absolute; top:20px; left:145px; z-index:10000; cursor:pointer; margin:0 auto; color:Green;}
+#menu {font-size:30px; position:absolute; top:20px; left:20px; z-index:10000; cursor:pointer; margin:0 auto; width:1000px; color:Green;}
 #menu li{display:inline; padding:0 50px;}
 #menu li:hover{text-shadow: 4px 4px 4px #bbb;}
 
