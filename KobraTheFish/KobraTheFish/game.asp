@@ -1,4 +1,5 @@
 ﻿<!--#include file="mainIncludes.asp"-->
+<title>Kobra The Fish</title>
 <style>
  div{
     z-index:10;
@@ -7,6 +8,7 @@
     display:inline-block;
 }
 </style>
+</head>
 <body>
     <div class="mainContainer">
         <ul id='menu'>
@@ -25,7 +27,7 @@
         </div>
         <!--input type="button" onclick="Game()" value="Play" id="playBtn" style="width:80px"/-->    
         <canvas width="1024" height="768" id="canvas" style="position: absolute">Your Browser Does Not Support Canvas :(</canvas>
-        <svg width="1024" height="768" style="position: absolute">
+        <svg id="svg" width="1024" height="768" style="position: absolute">
             <rect x="0" y="0" width="1024" height="300" style="fill: #05358c; stroke: none;"></rect>
             <rect x="0" y="300" width="1024" height="368" style="fill: #051837; stroke: none;"></rect>
             <rect x="0" y="668" width="1024" height="100" style="fill: #041527; stroke: none;"></rect>
@@ -110,6 +112,23 @@
     </div>
 </body>
 <script type="text/javascript">
+    var canvasLeft = parseInt($("body").css("width"));
+    canvasLeft = (canvasLeft - 1024) / 2
+    var mainWidth=1024+2*canvasLeft;
+    mainWidth=mainWidth+"px";
+    canvasLeft = canvasLeft + "px";
+    $("#canvas").css("left", canvasLeft);
+    $("#svg").css("left", canvasLeft);
+    $("#menu").css("top", "30px");
+    canvasLeft = parseInt(canvasLeft);
+    canvasLeft = canvasLeft + parseInt($("#menu").css("left"));
+    canvasLeft = canvasLeft + "px";
+    $("#menu").css("left", canvasLeft);
+    $("#instructionsContainer").css("left", canvasLeft);
+    $(".mainContainer").css("height", "768px");
+    $(".mainContainer").css("width", mainWidth);
+
+
     $("#scoreSubmit").click(function(){
         saveScore();
     });
@@ -121,9 +140,11 @@
     $("#logout").click(function(){
         if (confirm("Would you like to save your score?") == true) {
             saveScore();
+            localStorage.removeItem("userName");
             window.location.href="logIN.asp";
         } 
         else {
+            localStorage.removeItem("userName");
             window.location.href="logIN.asp";
         }
     });

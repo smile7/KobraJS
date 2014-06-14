@@ -31,16 +31,24 @@
     }
 }
 
-function logUserIn() {
+function logUserIn(userName) {
     var logged=false
     for (i = 0; i < users.length; i++) {
-        if (users[i].uName == document.getElementById('userName').value) {
-            window.location.href = "game.asp?user=" + users[i].uName;
-            logged = true;
-        }
+        if (users[i].uName == userName) {
+                if (typeof (Storage) !== "undefined") {
+                    localStorage.setItem("userName", userName);
+                }
+                else {
+                    setCookie("userName", userName, 365);
+                }
+                logged = true;
+            }       
     }
     if (logged == false) {
         alert("no such user please register");
+    }
+    else {
+        window.location.href = "game.asp?user=" + userName;
     }
 }
 

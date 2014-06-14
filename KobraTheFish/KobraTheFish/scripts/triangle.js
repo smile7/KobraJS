@@ -23,7 +23,7 @@ function drawTriangle (CONST_WIDTH, CONST_HEIGHT, x, y, id) {
     var eye = new Kinetic.Circle({
         x: CONST_WIDTH * 0.34,
         y: CONST_HEIGHT * 0.4,
-        radius: 5,
+        radius: CONST_HEIGHT * 0.05,
         fill: '#DEA31A'
     });
 
@@ -43,11 +43,11 @@ function drawTriangle (CONST_WIDTH, CONST_HEIGHT, x, y, id) {
     layer.add(curve);
     layer.add(eye);
     layer.add(body);
-    layer.add(rect);
+    //layer.add(rect);
     return stage.add(layer);
 }
 
 // HEIGHT MUST BE EXACTLY AS LONG AS THE WIDTH
 var width = 100,
     height = 100;
-drawTriangle(width, height, 100, 100);
+//drawTriangle(width, height, 100, 100);

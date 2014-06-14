@@ -1,6 +1,6 @@
-function drawTriangle (CONST_WIDTH, CONST_HEIGHT, x, y) {
+function drawTriangleToRight (CONST_WIDTH, CONST_HEIGHT, x, y,id) {
     var stage = new Kinetic.Stage({
-            container: 'container',
+            container: id,
             width: CONST_WIDTH,
             height: CONST_HEIGHT
         }),
@@ -43,11 +43,11 @@ function drawTriangle (CONST_WIDTH, CONST_HEIGHT, x, y) {
     layer.add(curve);
     layer.add(eye);
     layer.add(body);
-    layer.add(rect);
+    //layer.add(rect);
     return stage.add(layer);
 }
 
 // HEIGHT MUST BE EXACTLY AS LONG AS THE WIDTH
 var width = 100,
     height = 100;
-drawTriangle(width, height, 100, 100);
+//drawTriangle(width, height, 100, 100);

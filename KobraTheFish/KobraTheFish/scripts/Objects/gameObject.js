@@ -38,9 +38,8 @@ Fish = GameObject.extend({
 });
 // TO DO:
 MainFish = Fish.extend({
-    init: function (x, y, width, height, name) {
+    init: function (x, y, width, height) {
         this._super(x, y, width, height);
-        this.name = name;
     }
 });
 // TO DO:

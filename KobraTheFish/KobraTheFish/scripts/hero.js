@@ -1,4 +1,5 @@
 function drawHero (CONST_WIDTH, CONST_HEIGHT, x, y, id) {
+    var container = document.getElementById(id);
     var stage = new Kinetic.Stage({
             container: id,
             width: CONST_WIDTH,
@@ -189,7 +190,7 @@ function drawHero (CONST_WIDTH, CONST_HEIGHT, x, y, id) {
     layer.add(beard3);
     layer.add(beard2);
     layer.add(beard1);
-    layer.add(rect);
+    //layer.add(rect);
     return stage.add(layer);
 }
 
@@ -197,4 +198,4 @@ function drawHero (CONST_WIDTH, CONST_HEIGHT, x, y, id) {
 // HEIGHT MUST BE EXACTLY AS LONG AS THE WIDTH
 var width = 130,
     height = 130;
-drawHero(width, height, 100, 100);
+//drawHero(width, height, 100, 100);

@@ -1,6 +1,6 @@
-function drawOval (CONST_WIDTH, CONST_HEIGHT) {
+function drawOvalToRight(CONST_WIDTH, CONST_HEIGHT, id) {
     var stage = new Kinetic.Stage({
-            container: 'container',
+            container: id,
             width: CONST_WIDTH,
             height: CONST_HEIGHT
         }),
@@ -86,11 +86,11 @@ function drawOval (CONST_WIDTH, CONST_HEIGHT) {
     layer.add(body);
     layer.add(pupil);
     layer.add(tail);
-    layer.add(rect);
+    //layer.add(rect);
     return stage.add(layer);
 }
 
 // HEIGHT MUST BE EXACTLY AS LONG AS THE WIDTH
 var width = 100,
     height = 100;
-drawOval(width, height);
+//drawOval(width, height);
