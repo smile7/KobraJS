@@ -34,7 +34,7 @@ function drawSkeleton (CONST_WIDTH, CONST_HEIGHT, id) {
     var eye = new Kinetic.Circle({
         x: CONST_WIDTH * 0.08,
         y: CONST_HEIGHT * 0.5,
-        radius: 13,
+        radius: CONST_HEIGHT * 0.13,
         stroke: 'green',
         fill: 'yellow'
     });
@@ -42,7 +42,7 @@ function drawSkeleton (CONST_WIDTH, CONST_HEIGHT, id) {
     var pupil = new Kinetic.Circle({
         x: CONST_WIDTH * 0.05,
         y: CONST_HEIGHT * 0.51,
-        radius: 5,
+        radius: CONST_HEIGHT * 0.05,
         stroke: 'green',
         fill: 'black'
     });
@@ -149,7 +149,7 @@ function drawSkeleton (CONST_WIDTH, CONST_HEIGHT, id) {
     layer.add(mouth);
     layer.add(eye);
     layer.add(pupil);
-    layer.add(rect);
+    //layer.add(rect);
     return stage.add(layer);
 }
 
