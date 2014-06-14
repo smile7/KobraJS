@@ -90,3 +90,15 @@ function saveScore(){
         alert("your current score is higher");
     }
 }
+
+function gameOver() {
+    if (confirm("Would you like to save your score?") == true) {
+        saveScore();
+        localStorage.removeItem("score");
+        window.location.href = "logIN.asp";
+    }
+    else {
+        localStorage.removeItem("score");
+        window.location.href = "logIN.asp";
+    }
+}
