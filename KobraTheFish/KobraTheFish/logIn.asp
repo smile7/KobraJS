@@ -4,9 +4,10 @@
 </head>
 <body>
     <form id="myForm">
-        User Name: <input id="userName" type="text" />
-        <input type="button" id="logIn" onclick="logUserIn(document.getElementById('userName').value);" value="Log In" />
-        <input type="button" id="register" onclick="registerUser();" value ="Register"/>
+        <div id="user-ask"> User name: </div>
+        <input id="userName" type="text" /><br>
+        <div id="logIn" onclick="logUserIn(document.getElementById('userName').value);"> Log in </div>
+        <div id="register" onclick="registerUser();"> Register </div>
     </form>
 </body>
 <script type="text/javascript">
