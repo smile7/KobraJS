@@ -1,4 +1,5 @@
 ﻿<!--#include file="mainIncludes.asp"-->
+<title>Kobra The Fish</title>
 <style>
  div{
     z-index:10;
@@ -7,6 +8,7 @@
     display:inline-block;
 }
 </style>
+</head>
 <body>
     <div class="mainContainer">
         <ul id='menu'>

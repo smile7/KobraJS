@@ -16,4 +16,4 @@
         <script type="text/javascript" src="/scripts/oval.js?<%=Rnd %>"></script>
         <script type="text/javascript" src="/scripts/triangle.js?<%=Rnd %>"></script>
         <link rel="stylesheet" href="/style/style.css?ver=<%=RnD %>"  />
-    </head>
+

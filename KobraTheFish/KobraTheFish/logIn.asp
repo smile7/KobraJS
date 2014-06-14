@@ -1,5 +1,7 @@
 ﻿
-<!--#include virtual="mainIncludes.asp"-->
+<!--#include file="mainIncludes.asp"-->
+<title>Hello</title>
+</head>
 <body>
     <form id="myForm">
         User Name: <input id="userName" type="text" />
