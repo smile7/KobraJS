@@ -25,10 +25,10 @@ GameObject = Class.extend({
 });
 
 Fish = GameObject.extend({
-    init: function (x, y, width, height) {
+    init: function (x, y, width, height,div) {
         this._super(x, y, width, height);
         this.size = 1;
-
+        this.div = div;
     },
 
     drawFish: function(parameters) { //asd
@@ -40,6 +40,7 @@ Fish = GameObject.extend({
 MainFish = Fish.extend({
     init: function (x, y, width, height) {
         this._super(x, y, width, height);
+        
     }
 });
 // TO DO:

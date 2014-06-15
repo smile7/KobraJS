@@ -9,28 +9,23 @@
 
 
 function Game() {
-    appendDivstoDom(200);
+    //appendDivstoDom(200);
     var self = this,
         animation,
         canvas = $("#canvas")[0],
         ctx = canvas.getContext('2d'),
         mainLoop,
         enemyFishSpeed = 1,
-        enemyFishCounter = 0;
+        enemyFishCounter = -1;
 
     //TODO:implement for random number of objects
     var enemiesArr = [];
 
     var generator = setInterval(function () {
        
-        var enemy = generateEnemyObj(enemyFishCounter);
-        
+        var enemy = generateEnemyObj();
         enemiesArr.push(enemy);
         
-        //if (enemyFishCounter >= 100) {
-        //    enemyFishCounter = 0;
-        //}
-        //implement stop of generating new objects
     }, 1000);
 
     
@@ -52,18 +47,29 @@ function Game() {
 
     function generateHero() {
         var hero = new MainFish();
-        hero.init(window.width / 2, window.height / 2, 50, 50);
-        hero.canvas = drawHero(50, 50, window.width / 2, window.height / 2, 'heroDiv');
+        var heroDiv = document.createElement('div');
+        heroDiv.id = 'heroDiv';
+        document.body.appendChild(heroDiv);
+        hero.init(window.innerWidth / 2, window.innerHeight / 2, 50, 50);
+        hero.canvas = drawHero(50, 50, window.innerWidth / 2, window.innerHeight / 2, 'heroDiv');
+        hero.div = heroDiv;
+        hero.div.style.top = window.innerHeight / 2 + 'px';
+        hero.div.style.left = window.innerWidth / 2 + 'px';
     }
 
     function generateEnemyObj() {
+        enemyFishCounter += 1;
         var xPosForRightObjs = parseInt($('.mainContainer').css("width"));
         var xPosForLeftObjs = -50;
         var currentEnemy = new EnemyFish();
         var randomObjType = randomGenerator(1, 3);
         var currentYPos = randomGenerator(10, window.innerHeight - 100);
         var size = randomGenerator(40, 150);
-
+        var div = document.createElement('div');
+        div.id = enemyFishCounter.toString();
+        document.body.appendChild(div);
+        
+        
         //objects looking and moving left
         if (enemyFishCounter % 2 == 0) {
             switch (randomObjType) {
@@ -101,34 +107,37 @@ function Game() {
             }
 
         }
-        enemyFishCounter += 1;
+        currentEnemy.div = div;
+        currentEnemy.div.style.top = currentEnemy.y + 'px';
+        currentEnemy.div.style.left = currentEnemy.x + 'px';
+        
 
         return currentEnemy;
     }
 
-    function appendDivstoDom(enemiesCount) {
+    //function appendDivstoDom(enemiesCount) {
 
-        var fragment = document.createDocumentFragment();
+    //    var fragment = document.createDocumentFragment();
 
-        for (var i = 0; i <= enemiesCount; i++) {
-            var currDiv = document.createElement('div');
-            currDiv.id = i;
-            fragment.appendChild(currDiv);
-        }
+    //    for (var i = 0; i <= enemiesCount; i++) {
+    //        var currDiv = document.createElement('div');
+    //        currDiv.id = i;
+    //        fragment.appendChild(currDiv);
+    //    }
 
-        var heroDiv = document.createElement('div');
-        heroDiv.id = 'heroDiv';
-        heroDiv.style.top = window.innerHeight / 2 + 'px'
-        heroDiv.style.left = window.innerWidth / 2 + 'px';
-        fragment.appendChild(heroDiv);
+    //    var heroDiv = document.createElement('div');
+    //    heroDiv.id = 'heroDiv';
+    //    heroDiv.style.top = window.innerHeight / 2 + 'px'
+    //    heroDiv.style.left = window.innerWidth / 2 + 'px';
+    //    fragment.appendChild(heroDiv);
 
-        document.body.appendChild(fragment);
-    }
+    //    document.body.appendChild(fragment);
+    //}
 
     function updateEnemiesPosition(enemiesArr) {
 
         for (var i = 0; i < enemiesArr.length; i++) {
-
+            
             //if a div gets ot of the screen on the left we set it's position back to inital
             if (enemiesArr[i].x < -300) {
 
@@ -141,7 +150,7 @@ function Game() {
             }
 
             //if index is even the fish goes left
-            if (i % 2 == 0) {
+            if (enemiesArr[i].div.id % 2 == 0) {
                 enemiesArr[i].x -= enemyFishSpeed;
             }
             else {
@@ -153,10 +162,11 @@ function Game() {
     function drawEnemies(enemiesArr) {
         for (var i = 0; i < enemiesArr.length; i++) {
            
-            var currDiv = document.getElementById(i);
+            //var currDiv = document.getElementById(i);
 
-            currDiv.style.top = enemiesArr[i].y + 'px';
-            currDiv.style.left = enemiesArr[i].x + 'px';
+            enemiesArr[i].div.style.top = enemiesArr[i].y + 'px';
+            enemiesArr[i].div.style.left = enemiesArr[i].x + 'px';
+            
         }
     }
 
