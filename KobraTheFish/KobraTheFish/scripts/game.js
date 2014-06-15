@@ -52,7 +52,6 @@ function Game() {
 
     function generateHero() {
         var hero = new MainFish();
-        
         hero.init(window.width / 2, window.height / 2, 50, 50);
         hero.canvas = drawHero(50, 50, window.width / 2, window.height / 2, 'heroDiv');
     }
