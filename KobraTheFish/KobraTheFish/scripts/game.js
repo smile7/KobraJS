@@ -35,7 +35,7 @@ function Game() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         drawEnemies(enemiesArr);
-
+        checkForCollision();
         updateEnemiesPosition(enemiesArr);
 
         ctx.restore();
@@ -43,6 +43,7 @@ function Game() {
 
     };
     generateHero();
+    $(document).on('mousemove', moveHeroByMouse)
     mainLoop();
 
     function generateHero() {
@@ -57,6 +58,59 @@ function Game() {
         hero.div.style.left = window.innerWidth / 2 + 'px';
     }
 
+    function moveHeroByMouse(e) {
+        var fishLeft = e.clientX - ($('#heroDiv').width() / 2);
+        var fishTop = e.clientY - ($('#heroDiv').height() / 2);
+        $('#heroDiv').css({
+            top: fishTop + 'px',
+            left: fishLeft + 'px'
+        });
+    }
+    var overlaps = (function () {
+        function getPositions(elem) {
+            var pos, width, height;
+            pos = $(elem).position();
+            width = $(elem).width() / 2;
+            height = $(elem).height();
+            return [[pos.left, pos.left + width], [pos.top, pos.top + height]];
+        }
+
+        function comparePositions(p1, p2) {
+            var r1, r2;
+            r1 = p1[0] < p2[0] ? p1 : p2;
+            r2 = p1[0] < p2[0] ? p2 : p1;
+            return r1[1] > r2[0] || r1[0] === r2[0];
+        }
+
+        return function (a, b) {
+            var pos1 = getPositions(a),
+                pos2 = getPositions(b);
+            return comparePositions(pos1[0], pos2[0]) && comparePositions(pos1[1], pos2[1]);
+        };
+    })();
+    function checkForCollision() {
+        var enemyFishes = $('.enemyFishes');
+        for (var i = 0; i < enemyFishes.length; i++) {
+            if (overlaps($('#heroDiv'), enemyFishes[i])) {
+                if ($('#heroDiv').height() < $(enemyFishes[i]).height() && $('#heroDiv').width() < $(enemyFishes[i]).width()) {
+                    console.log('YOU DIED, LOOSER!');
+                } else {
+                    $(enemyFishes[i]).html('').removeClass('enemyFishes');
+                    $('#heroDiv').css({
+                        height: $('#heroDiv').height() + 3 + 'px',
+                        width: $('#heroDiv').width() + 3 + 'px'
+                    });
+                    $('#heroDiv').find('canvas').css({
+                        height: $('#heroDiv').height() + 'px',
+                        width: $('#heroDiv').width() + 'px'
+                    });
+                    console.log($('#heroDiv').find('canvas').height());
+                }
+            }
+        }
+    }
+    
+
     function generateEnemyObj() {
         enemyFishCounter += 1;
         var xPosForRightObjs = parseInt($('.mainContainer').css("width"));
@@ -67,6 +121,7 @@ function Game() {
         var size = randomGenerator(40, 150);
         var div = document.createElement('div');
         div.id = enemyFishCounter.toString();
+        $(div).addClass('enemyFishes');
         document.body.appendChild(div);
         
         
