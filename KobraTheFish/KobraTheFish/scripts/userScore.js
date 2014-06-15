@@ -31,6 +31,15 @@
     }
 }
 
+function updateCurrentScoreToStore(currentScore) {
+    if (typeof (Storage) !== "undefined") {
+        localStorage.setItem("score", currentScore);
+    }
+    else {
+        setCookie("userName", currentScore, 365);
+    }
+}
+
 function logUserIn(userName) {
     var logged=false
     for (i = 0; i < users.length; i++) {
