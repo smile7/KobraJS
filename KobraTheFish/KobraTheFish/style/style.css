@@ -48,3 +48,11 @@
     border: 1px solid blue;
     border-radius: 5px;
 }
+#gameOver{
+    font-size:120px;
+    color:chartreuse;
+    top:40%;
+    left:30%;
+    position:absolute;
+    text-align:center;
+}

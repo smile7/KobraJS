@@ -6,6 +6,7 @@
 /// <reference path="skeleton.js" />
 /// <reference path="triangleToRight.js" />
 /// <reference path="ovalToRight.js" />
+/// <reference path="skeletonToRight.js" />
 
 
 function Game() {
@@ -15,7 +16,7 @@ function Game() {
         canvas = $("#canvas")[0],
         ctx = canvas.getContext('2d'),
         mainLoop,
-        enemyFishSpeed = 1,
+        enemyFishSpeed = 2.5,
         enemyFishCounter = -1;
 
     //TODO:implement for random number of objects
@@ -93,18 +94,25 @@ function Game() {
         for (var i = 0; i < enemyFishes.length; i++) {
             if (overlaps($('#heroDiv'), enemyFishes[i])) {
                 if ($('#heroDiv').height() < $(enemyFishes[i]).height() && $('#heroDiv').width() < $(enemyFishes[i]).width()) {
-                    console.log('YOU DIED, LOOSER!');
+                    
+                    for (var i = 0; i < enemiesArr.length; i++) {
+                        enemiesArr[i].div.style.display = 'none';
+                    }
+                    window.clearInterval(generator);
+                    var $gameOver = $('<div>GAME OVER</div>');
+                    $gameOver.attr('id', 'gameOver');
+                    $('body').append($gameOver);
                 } else {
                     $(enemyFishes[i]).html('').removeClass('enemyFishes');
                     $('#heroDiv').css({
-                        height: $('#heroDiv').height() + 3 + 'px',
-                        width: $('#heroDiv').width() + 3 + 'px'
+                        height: $('#heroDiv').height() + 2 + 'px',
+                        width: $('#heroDiv').width() + 2 + 'px'
                     });
                     $('#heroDiv').find('canvas').css({
                         height: $('#heroDiv').height() + 'px',
                         width: $('#heroDiv').width() + 'px'
                     });
-                    console.log($('#heroDiv').find('canvas').height());
+                    //console.log($('#heroDiv').find('canvas').height());
                 }
             }
         }
@@ -129,16 +137,16 @@ function Game() {
         if (enemyFishCounter % 2 == 0) {
             switch (randomObjType) {
                 case 1:
-                    currentEnemy.init(xPosForRightObjs - size, currentYPos, size, 2 * size);
+                    currentEnemy.init(xPosForRightObjs - size, currentYPos, size, 2 * size,div);
                     currentEnemy.canvas = drawSkeleton(size, size / 2, enemyFishCounter.toString());
                     break;
                 case 2:
-                    currentEnemy.init(xPosForRightObjs - size, currentYPos, size, size);
+                    currentEnemy.init(xPosForRightObjs - size, currentYPos, size, size,div);
                     currentEnemy.canvas = drawTriangle(size,
                        size, currentEnemy.x, currentEnemy.y, enemyFishCounter.toString());
                     break;
                 case 3:
-                    currentEnemy.init(xPosForRightObjs - size, currentYPos, size, size);
+                    currentEnemy.init(xPosForRightObjs - size, currentYPos, size, size,div);
                     currentEnemy.canvas = drawOval(size, size, enemyFishCounter.toString());
                     break;
 
@@ -150,13 +158,16 @@ function Game() {
         else {
             switch (randomObjType) {
                 case 1:
-                    currentEnemy.init(xPosForLeftObjs - size, currentYPos, size, size);
+                    currentEnemy.init(xPosForLeftObjs - size, currentYPos, size, size,div);
                     currentEnemy.canvas = drawTriangleToRight(size, size, enemyFishCounter.toString());
                     break;
                 case 2:
-                    currentEnemy.init(xPosForLeftObjs - size, currentYPos, size, size);
+                    currentEnemy.init(xPosForLeftObjs - size, currentYPos, size, size,div);
                     currentEnemy.canvas = drawOvalToRight(size, size, enemyFishCounter.toString());
                     break;
+                case 3:
+                    currentEnemy.init(xPosForLeftObjs - size, currentYPos, size, size / 2, div);
+                    currentEnemy.canvas = drawSkeletonToRight(size, size / 2, enemyFishCounter.toString());
                 default:
                     break;
             }
