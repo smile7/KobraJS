@@ -5,7 +5,7 @@
 <body>
     <form id="myForm">
         <div id="user-ask"> User name: </div>
-        <input id="userName" type="text" /><br>
+        <input id="userName" onkeyup="filterUserName();" type="text" /><br>
         <div id="logIn" onclick="logUserIn(document.getElementById('userName').value);"> Log in </div>
         <div id="register" onclick="registerUser();"> Register </div>
     </form>
