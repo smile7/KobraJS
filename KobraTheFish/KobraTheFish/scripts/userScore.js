@@ -111,3 +111,9 @@ function gameOver() {
         window.location.href = "logIN.asp";
     }
 }
+
+function filterUserName(){
+    var uName=document.getElementById("userName").value;
+        uName=uName.replace(';', '');
+        document.getElementById("userName").value=uName;
+}
