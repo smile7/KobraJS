@@ -19,3 +19,5 @@ users[20]={'uName':'dsadas', 'score':0};
 users[21]={'uName':'sadsfgv', 'score':0};
 users[22]={'uName':'sadavx', 'score':0};
 users[23]={'uName':'dacas', 'score':0};
+users[24]={'uName':'dan', 'score':0};
+users[25]={'uName':'new', 'score':0};
