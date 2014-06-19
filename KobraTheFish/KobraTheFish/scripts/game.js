@@ -22,6 +22,8 @@ function Game() {
     //TODO:implement for random number of objects
     var enemiesArr = [];
 
+    var divs = document.createElement('div');
+
     var generator = setInterval(function () {
        
         var enemy = generateEnemyObj();
@@ -49,7 +51,7 @@ function Game() {
 
     function generateHero() {
         var hero = new MainFish();
-        var heroDiv = document.createElement('div');
+        var heroDiv = divs.cloneNode(true);
         heroDiv.id = 'heroDiv';
         document.body.appendChild(heroDiv);
         hero.init(window.innerWidth / 2, window.innerHeight / 2, 50, 50);
@@ -127,7 +129,7 @@ function Game() {
         var randomObjType = randomGenerator(1, 3);
         var currentYPos = randomGenerator(10, window.innerHeight - 100);
         var size = randomGenerator(40, 150);
-        var div = document.createElement('div');
+        var div = divs.cloneNode(true);
         div.id = enemyFishCounter.toString();
         $(div).addClass('enemyFishes');
         document.body.appendChild(div);
@@ -186,12 +188,12 @@ function Game() {
     //    var fragment = document.createDocumentFragment();
 
     //    for (var i = 0; i <= enemiesCount; i++) {
-    //        var currDiv = document.createElement('div');
+    //        var currDiv = divs.cloneNode(true);
     //        currDiv.id = i;
     //        fragment.appendChild(currDiv);
     //    }
 
-    //    var heroDiv = document.createElement('div');
+    //    var heroDiv = divs.cloneNode(true);
     //    heroDiv.id = 'heroDiv';
     //    heroDiv.style.top = window.innerHeight / 2 + 'px'
     //    heroDiv.style.left = window.innerWidth / 2 + 'px';
