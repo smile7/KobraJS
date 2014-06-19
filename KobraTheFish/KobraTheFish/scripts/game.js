@@ -104,6 +104,7 @@ function Game() {
                     var $gameOver = $('<div>GAME OVER</div>');
                     $gameOver.attr('id', 'gameOver');
                     $('body').append($gameOver);
+                    gameOver();
                 } else {
                     $(enemyFishes[i]).html('').removeClass('enemyFishes');
                     $('#heroDiv').css({
@@ -114,6 +115,8 @@ function Game() {
                         height: $('#heroDiv').height() + 'px',
                         width: $('#heroDiv').width() + 'px'
                     });
+                    document.getElementById("score").value=parseInt(document.getElementById("score").value)+10;
+                    localStorage.setItem("score", document.getElementById("score").value);
                     //console.log($('#heroDiv').find('canvas').height());
                 }
             }

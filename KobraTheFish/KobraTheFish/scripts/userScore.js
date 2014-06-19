@@ -82,7 +82,6 @@ function saveScore(){
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                         if (xmlhttp.responseText == "sucsess") {
                             alert("your highscore has been saved");
-                            window.location.href = "game.asp?user=" + uName;
                         }
                         else  {
                             alert("an error occured on the server please try again later.");
@@ -104,11 +103,9 @@ function gameOver() {
     if (confirm("Would you like to save your score?") == true) {
         saveScore();
         localStorage.removeItem("score");
-        window.location.href = "logIN.asp";
     }
     else {
         localStorage.removeItem("score");
-        window.location.href = "logIN.asp";
     }
 }
 

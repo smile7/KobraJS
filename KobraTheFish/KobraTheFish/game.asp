@@ -108,7 +108,7 @@
             </image>
         </svg>
         <input type="hidden" id="uName" value="<%=request("user") %>" />
-        <input type="hidden" id="score" />
+        <input type="hidden" id="score" value="0"/>
     </div>
 </body>
 <script type="text/javascript">
@@ -158,5 +158,7 @@
         $("#instructionsContainer").fadeOut("slow");
         $("#menu").fadeIn("slow");
     });
+
+    document.getElementById("score").value=localStorage.score;
 </script>
 </html>
